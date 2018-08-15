@@ -1,17 +1,20 @@
 {% extends "main.html" %}
 
 {% block head_title %}
+
 {{ instance.title}}|{{ block.super }}
+
 {% endblock head_title %}
 
 {% block content %}
+
 <h1>{{ title }}</h1>
 
+{{ instance.id }}<br/>
 {{ instance.title }}<br/>
 {{ instance.slug }}<br/>
-{{ instance.snippet }}<br/>
+{{ instance.content }}<br/>
 {{ instance.updated }}<br/>
 {{ instance.timestamp }}<br/>
-{{ instance.id }}<br/>
 
 {% endblock content %}

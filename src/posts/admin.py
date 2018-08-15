@@ -8,7 +8,7 @@ from .models import Post
 
 class PostModelAdmin(admin.ModelAdmin):
 	list_display = ["title","updated","slug", "timestamp"]
-	list_display_links = ["updated"]
+	list_display_links = ["updated",]
 	list_filter = ["updated","timestamp"]
 	list_editable = ["title"]
 	search_fields = ["title","content"]

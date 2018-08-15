@@ -50,7 +50,7 @@ def post_update(request, id=None):
 	    if form.is_valid():
 		    instance = form.save(commit=False)
 		    instance.author = request.user
-		    published_date = timezone.now()
+		    instance.published_date = timezone.now()
 		    instance.save()
 		    messsages.success(request, "Saved")
 		    return HttpResponseRedirect(instance.get_absolute_url())
@@ -65,4 +65,4 @@ def post_delete(request, id=None):
 	instance = get_object_or_404(Post, id=id)
 	instance.delete()
 	messsages.success(request, "Successfully deleted")
-	return redirect("posts:list")
+	return redirect("posts_list")
